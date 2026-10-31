@@ -1,27 +1,131 @@
-#container {
+.pagina-auth {
+  --background: #111211;
+}
+
+.contenedor {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 440px);
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 32px 0;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.marca {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid #bd9657;
+  border-radius: 50%;
+  color: #d6b477;
+  font-family: Georgia, serif;
+  font-size: 32px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.nombre-marca {
+  margin: 14px 0 4px;
+  color: #d6b477;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
 }
 
-#container a {
+.subtitulo {
+  margin: 0 0 26px;
+  color: #a6a59f;
+  font-size: 14px;
+}
+
+.tarjeta {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #34342f;
+  border-radius: 18px;
+  background: #1b1c19;
+  text-align: left;
+  box-shadow: 0 18px 50px rgb(0 0 0 / 24%);
+}
+
+.tarjeta h2 {
+  margin: 0 0 8px;
+  color: #f3efe6;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.descripcion {
+  margin: 0 0 22px;
+  color: #a6a59f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.campo {
+  --background: #242520;
+  --border-color: #3b3c35;
+  --border-radius: 10px;
+  --highlight-color-focused: #d6b477;
+  --color: #f3efe6;
+  --padding-start: 14px;
+  margin: 0 0 14px;
+  border: 1px solid #3b3c35;
+  border-radius: 10px;
+}
+
+.campo ion-input {
+  --color: #f3efe6;
+  --placeholder-color: #85857e;
+  --placeholder-opacity: 1;
+  --padding-bottom: 12px;
+  --padding-top: 8px;
+}
+
+.campo ion-input::part(label) {
+  color: #c2bfb5;
+  font-size: 13px;
+}
+
+.boton-principal {
+  --background: #c7a467;
+  --background-activated: #b28d50;
+  --background-hover: #d3b477;
+  --border-radius: 10px;
+  --color: #171612;
+  --box-shadow: none;
+  min-height: 48px;
+  margin: 22px 0 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.mensaje {
+  margin: 14px 0 0;
+  color: #e2c58f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.registro {
+  margin: 22px 0 0;
+  color: #b9b7ae;
+  font-size: 14px;
+  text-align: center;
+}
+
+.registro a {
+  color: #dfbd7e;
+  font-weight: 700;
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 25px 20px;
+  }
 }

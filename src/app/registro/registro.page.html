@@ -1,0 +1,91 @@
+
+<ion-header class="cabecera-auth">
+  <ion-toolbar>
+    <ion-title>Crear cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pagina-auth ion-padding">
+  <div class="contenedor">
+    <div class="marca" aria-hidden="true">B</div>
+    <p class="nombre-marca">BARBERPRO</p>
+
+    <div class="tarjeta">
+      <h1>Únete a BarberPro</h1>
+      <p class="descripcion">Regístrate para gestionar tus citas.</p>
+
+      <ion-item class="campo">
+        <ion-input
+          label="Nombre completo"
+          labelPlacement="stacked"
+          placeholder="Tu nombre"
+          type="text"
+          [(ngModel)]="nombre">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="campo">
+        <ion-input
+          label="Correo electrónico"
+          labelPlacement="stacked"
+          placeholder="ejemplo@correo.com"
+          type="email"
+          [(ngModel)]="correo">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="campo">
+        <ion-input
+          label="Contraseña"
+          labelPlacement="stacked"
+          placeholder="Crea una contraseña"
+          type="password"
+          [(ngModel)]="password">
+        </ion-input>
+      </ion-item>
+
+      <section class="aviso-privacidad" aria-labelledby="titulo-aviso">
+        <h2 id="titulo-aviso">Aviso de privacidad y consentimiento</h2>
+        <p>
+          BarberPro utilizará tu nombre, correo electrónico y contraseña para
+          crear y proteger tu cuenta, y para gestionar tus citas. Tus datos se
+          tratarán para prestar estas funciones. Puedes solicitar acceso,
+          corrección o eliminación de tus datos contactando al administrador
+          del servicio.
+        </p>
+      </section>
+
+      <label class="aceptacion-privacidad">
+        <input
+          type="checkbox"
+          name="aceptaTratamiento"
+          [(ngModel)]="aceptaTratamiento"
+          required
+          aria-required="true">
+        <span>
+          He leído el aviso y acepto el tratamiento de mis datos personales.
+        </span>
+      </label>
+
+      <ion-button
+        expand="block"
+        class="boton-principal"
+        (click)="registrar()"
+        [disabled]="cargando">
+        {{ cargando ? 'Registrando...' : 'Crear cuenta' }}
+      </ion-button>
+
+      @if (mensaje) {
+        <p class="mensaje" role="alert">{{ mensaje }}</p>
+      }
+
+      <ion-button
+        expand="block"
+        fill="clear"
+        class="boton-secundario"
+        routerLink="/home">
+        Volver al inicio de sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,20 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="pagina-auth ion-padding">
+  <div class="contenedor">
+    <div class="marca" aria-hidden="true">B</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <p class="nombre-marca">BARBERPRO</p>
+    <p class="subtitulo">Tu estilo, nuestra pasión.</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="tarjeta">
+      <h2>Bienvenido</h2>
+      <p class="descripcion">Inicia sesión para gestionar tus citas.</p>
+
+      <ion-item class="campo">
+        <ion-input
+          label="Correo electrónico"
+          labelPlacement="stacked"
+          type="email"
+          placeholder="ejemplo@correo.com"
+          [(ngModel)]="correo">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="campo">
+        <ion-input
+          label="Contraseña"
+          labelPlacement="stacked"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          [(ngModel)]="password">
+        </ion-input>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        class="boton-principal"
+        (click)="iniciarSesion()"
+        [disabled]="cargando">
+        {{ cargando ? 'Verificando...' : 'Iniciar sesión' }}
+      </ion-button>
+
+      @if (mensaje) {
+        <p class="mensaje">{{ mensaje }}</p>
+      }
+
+      <p class="registro">
+        ¿No tienes cuenta?
+        <a routerLink="/registro">Regístrate</a>
+      </p>
+    </div>
   </div>
 </ion-content>
